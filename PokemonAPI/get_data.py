@@ -23,6 +23,7 @@ def get_pokemon(pokemon_name: str):
     print_pokemon_data(poke_id, name, abilities_list, types_list, weight_kg, height_m)
     return
 
+
 def print_pokemon_data(poke_id, name, abilities, types, weight, height):
 
     abilities_str = ", ".join(str(ab) for ab in abilities)
