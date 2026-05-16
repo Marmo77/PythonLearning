@@ -1,16 +1,40 @@
 from get_data import get_pokemon
-from user_help import get_help
+from user_help import get_all_pokemon
 #Menu obsługi skryptu
 
-print("WITAJ! Jakiego pokemona chcesz znaleźć?")
-print("(wpisz: 'wyjdz' aby wyjsc) ('help', aby zobaczyć pomoc)")
-while True:
-    user_input = input("Podaj nazwe Pokemona: ")
-    if user_input.lower() == "wyjdz":
-        print("-- Bywaj --")
-        break
-    if user_input.lower() == "help":
-        get_help()
-    else:
-        get_pokemon(user_input)
 
+def menuList():
+    print("----- Menu -----")
+    print("1. Pokemon")
+    print("2. Lista Pokemonów")
+    print("3. X")
+    print("9. wyjdz")
+    print("-----------------")
+
+
+def start():
+    print("----- WITAJ W CENTRUM POKEMONÓW -----")
+    print("wybierz numer z listy:")
+    while True:
+        menuList()
+        user_input = input("> ")
+        if user_input == "1":
+            while True:
+                print("---- Podaj nazwe Pokemona ----")
+                print("(wpisz 'wyjdz', aby wrócić do Menu)")
+                pokemon_name = input("Pokemon: ").lower()
+                if pokemon_name == "wyjdz":
+                    break
+
+                get_pokemon(pokemon_name)
+
+        if user_input.lower() == "2":
+            get_all_pokemon()
+
+        if user_input.lower() == "9":
+            print("-- Bywaj --")
+            break
+
+
+if __name__ == "__main__":
+    start()
