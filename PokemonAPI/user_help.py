@@ -4,9 +4,7 @@ def get_help():
 
     print("------ POMOC ------")
     print(f"1: Nazwy wszystkich pokemonów (alfabetycznie)")
-    print("(podaj numer 1-6) (wpisz: 9, aby się cofnąć)")
-
-
+    print("(podaj numer z listy) (wpisz: 9, aby się cofnąć)")
     while True:
         userinput = input("Co potrzebujesz: ")
         if userinput == "9":
@@ -14,7 +12,6 @@ def get_help():
         if userinput == "1":
             get_all_pokemon()
             break
-
 
 def get_all_pokemon():
 
