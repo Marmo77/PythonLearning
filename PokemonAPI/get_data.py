@@ -2,6 +2,8 @@ import requests
 
 def get_pokemon(pokemon_name: str):
 
+    if pokemon_name.isspace() or len(pokemon_name) == 0:
+        return
     url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name.lower()}"
 
     response = requests.get(url)
