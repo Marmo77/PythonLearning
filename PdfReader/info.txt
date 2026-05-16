@@ -1,0 +1,2 @@
+Reading and extracting data from PDFS using pypdf
+(pip install pypdf)
